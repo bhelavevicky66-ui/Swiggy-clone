@@ -324,61 +324,50 @@ p {
 
 
 
-.images-1 {
-    padding-left: 0px;
-    flex-shrink: 0;
-}
-
-h2 {
-    padding-top: 10px;
-    padding-left: 10px;
-    font-size: 16px;
-}
-
-h3 {
-    padding-left: 10px;
-    font-size: 14px;
-}
-
-pre {
-    color: slategray;
-    padding-left: 10px;
-    padding-top: 5px;
-    font-size: 14px;
-    font-family: Gilroy, arial, Helvetica Neue, sans-serif;
-
-}
-
-.section {
-    margin-left: 5rem;
-    border: 2px solid black;
-    border-radius: 15px;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
 .All-box-1 {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+    /* Align top */
     height: auto;
-    width: auto;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    width: 85%;
+    /* Use standard width */
+    margin: 0 auto;
+    /* Center container */
     padding-top: 20px;
     margin-top: 15px;
-    gap: 20px;
+    gap: 24px;
+    /* Good gap for large items */
+    overflow-x: auto;
+    /* Enable horizontal scroll */
+    flex-wrap: nowrap;
+    /* Prevent wrapping */
+    scrollbar-width: none;
+    /* Hide scrollbar */
+    padding-bottom: 20px;
+    /* Space for shadow/scroll */
+}
+
+/* Hide scrollbar for Chrome/Safari */
+.All-box-1::-webkit-scrollbar {
+    display: none;
 }
 
 .big-img-1 {
-    height: 180px;
-    width: 240px;
+    height: 220px;
+    /* Taller image */
+    width: 100%;
+    /* Fill container */
     border-radius: 20px;
+    object-fit: cover;
+}
+
+.images-1 {
+    width: 280px;
+    /* Much larger fixed width */
+    padding-left: 0px;
+    flex-shrink: 0;
+    transition: transform 0.1s ease-in-out;
 }
 
 .container-1 {
@@ -391,8 +380,37 @@ pre {
     padding-left: 13rem;
 }
 
+h2 {
+    padding-top: 12px;
+    padding-left: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(2, 6, 12, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    /* Adapts to parent width */
+}
+
+/* ... existing h3 ... */
+
+.details,
+.location {
+    padding-left: 4px;
+    font-size: 14px;
+    color: rgba(2, 6, 12, 0.6);
+    font-family: Gilroy, Arial, sans-serif !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    /* Adapts to parent width */
+    margin-top: 2px;
+    font-weight: 400;
+}
+
 .boxes-1 {
-    height: auto;
     /* Changed from fixed 100px so heights can adjust */
     width: 90%;
     /* Increased width slightly */
@@ -458,18 +476,32 @@ pre {
 }
 
 h6 {
-    font-size: 27px;
+    font-size: 24px;
     font-family: Gilroy, Arial, sans-serif !important;
-    padding-left: 180px;
-    padding-top: 13px;
-    color: #02060cbf;
-    font-weight: bolder;
+    padding: 0;
+    /* Removed massive padding */
+    color: #02060c;
+    font-weight: 800;
+    line-height: 1.2;
 }
 
 .container-4 {
     display: flex;
-    gap: 90px;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    /* Reduced gap from 90px */
     background-color: #f0f0f5;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    /* Responsive */
+}
+
+/* Text wrapper */
+.container-5 {
+    display: flex;
+    flex-direction: column;
+    width: auto;
 }
 
 button {
@@ -481,19 +513,21 @@ button {
     background-color: black;
 }
 
-.container-7 {
-    border: 2px solid black;
-    border-radius: 25px;
-    height: 80px;
+/* Replaced container-7 with store-badge style */
+.store-badge {
+    height: 64px;
+    /* Proper height for app store buttons */
     width: auto;
+    display: block;
+    cursor: pointer;
 }
 
 .container-8 {
     display: flex;
-    gap: 34px;
-    margin-left: 30px;
-    cursor: pointer;
-
+    gap: 24px;
+    margin-left: 0;
+    /* Reset margin */
+    align-items: center;
 }
 
 .image-3 {
@@ -685,7 +719,7 @@ footer {
     }
 
     .images-1 {
-        width: 45%;
+        width: 90%;
         /* 2 cols on tablet */
         margin-bottom: 20px;
     }
@@ -726,6 +760,27 @@ footer {
     }
 }
 
+/* Filter Container for alignment */
+.filter-container {
+    width: 85%;
+    margin: 10px auto 20px auto;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.section {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background-color: white;
+    font-family: Gilroy, Arial, sans-serif !important;
+    font-size: 16px;
+    color: rgba(2, 6, 12, 0.75);
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
 @media (max-width: 480px) {
 
     /* Mobile */
@@ -745,11 +800,6 @@ footer {
 
     h1 {
         font-size: 1.2rem;
-    }
-
-    .section {
-        margin-left: 1rem;
-        width: calc(100% - 2rem);
     }
 }
 
