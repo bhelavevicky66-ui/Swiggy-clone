@@ -10,7 +10,7 @@
     width: 100%;
     padding: 12px 28px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
     position: sticky;
@@ -26,7 +26,7 @@ option {
 .box-other {
     color: #333;
     font-size: 0.95rem;
-    margin: 0 12px;
+    margin: 0 40px;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -39,8 +39,8 @@ option {
 }
 
 .navbar img.image {
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     display: block;
     margin-left: 20px;
 }
@@ -51,7 +51,7 @@ option {
     font-size: 0.85rem;
     display: inline-block;
     padding-bottom: 4px;
-    margin-left: -50px;
+    margin-left: 0;
     border-bottom: 2px solid rgba(0, 0, 0, 0.85);
 }
 
@@ -81,7 +81,8 @@ option {
 
 .nav-items {
     display: flex;
-    gap: 15px;
+    gap: 30px;
+    margin-left: auto;
     align-items: center;
     color: #333;
     font-size: 0.85rem;
@@ -91,6 +92,7 @@ option {
 .nav-items i {
     vertical-align: middle;
     color: #333;
+    font-size: 20px;
 }
 
 .nav-items span {
@@ -127,7 +129,7 @@ sup {
     align-items: center;
     align-content: center;
     margin: 0px auto;
-    padding: 0 20px;
+    padding: 30px 20px 0 20px;
 }
 
 .images {
@@ -367,7 +369,12 @@ p {
     /* Much larger fixed width */
     padding-left: 0px;
     flex-shrink: 0;
-    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+.images-1:hover {
+    transform: scale(0.95);
 }
 
 .container-1 {
@@ -719,7 +726,7 @@ footer {
     }
 
     .images-1 {
-        width: 90%;
+        width: 45%;
         /* 2 cols on tablet */
         margin-bottom: 20px;
     }
@@ -789,6 +796,13 @@ footer {
         /* 1 col on mobile */
     }
 
+    .big-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+
     .navbar img.image {
         margin-left: 0;
     }
@@ -800,6 +814,25 @@ footer {
 
     h1 {
         font-size: 1.2rem;
+    }
+
+    .container-4 {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .container-4 h6 {
+        font-size: 18px;
+    }
+
+    .store-badge {
+        height: 48px;
+    }
+
+    .container-8 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
     }
 }
 
