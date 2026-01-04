@@ -145,39 +145,39 @@ sup {
 }
 
 .food-menu {
-  display: flex;
-  gap: 30px;
-  margin-top: 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  padding-bottom: 10px;
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 10px;
 }
 
 .food-menu::-webkit-scrollbar {
-  height: 6px;
+    height: 6px;
 }
 
 .food-menu::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+    background: #f1f1f1;
+    border-radius: 10px;
 }
 
 .food-menu::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+    background: #888;
+    border-radius: 10px;
 }
 
 .food-menu img {
-  width: 144px;
-  height: 180px;
-  object-fit: cover;
-  flex-shrink: 0;
-  cursor: pointer;
-  transition: transform 0.3s;
+    width: 144px;
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
 .food-menu img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* Default image size for 'What's on your mind' items */
@@ -392,31 +392,52 @@ pre {
 }
 
 .boxes-1 {
-    height: 100px;
-    width: 78%;
+    height: auto;
+    /* Changed from fixed 100px so heights can adjust */
+    width: 90%;
+    /* Increased width slightly */
     display: flex;
-    justify-content: flex-start;
-    gap: 2rem;
-    align-items: center;
+    justify-content: center;
+    /* Center the grid */
+    flex-wrap: wrap;
+    /* Allow wrapping if screen is small, though structure implies rows */
+    gap: 20px;
+    align-items: stretch;
+    /* Make boxes same height */
+    margin-bottom: 20px;
+    /* Add spacing between rows */
 }
 
 .boxes {
     height: auto;
+    width: 260px;
+    /* Fixed width for uniformity */
+    min-height: 80px;
+    /* Minimum height for consistency */
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid rgba(2, 6, 12, 0.1);
-    border-radius: 16px;
-    padding: 27px 50px;
-    font-size: 20px;
-    font-weight: bolder;
+    border: 1px solid rgba(2, 6, 12, 0.1);
+    /* Slightly thinner border generally looks cleaner */
+    border-radius: 12px;
+    padding: 16px;
+    /* Reduced specific padding, rely on width */
+    font-size: 16px;
+    /* slightly smaller font for better fit */
+    font-weight: 600;
     text-align: center;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.3px;
     color: rgba(2, 6, 12, 0.75);
     font-family: Gilroy, Arial, sans-serif !important;
     cursor: pointer;
+    background-color: white;
+    /* Ensure bg is white */
+    transition: box-shadow 0.2s;
+    /* Nice interaction */
+}
 
-
+.boxes:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .container-2 {
@@ -581,6 +602,7 @@ footer {
 }
 
 /* Responsive Design */
+/* Responsive Design */
 @media (max-width: 1024px) {
 
     .container,
@@ -589,9 +611,16 @@ footer {
     .all-box,
     .section,
     .All-box-1 {
-        margin-left: 2rem;
-        margin-right: 2rem;
-        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        /* Use more width on tablet */
+    }
+
+    .all-box {
+        margin-left: auto;
+        /* Reset the 8.5rem margin */
+        padding-left: 0;
     }
 
     .container-1 {
@@ -614,11 +643,8 @@ footer {
 
     .nav-items {
         display: none;
-        /* Hide full menu on mobile for now, or use a hamburger if requested. Swiggy mobile app uses bottom nav or side menu */
+        /* Hide full menu on mobile */
     }
-
-    /* Keep Sign In or vital icons if needed, but for strict clone look on mobile web, it simplifies. 
-       For this task, let's keep it simple or make it scrollable/wrap if user wants */
 
     /* Better approach for learning project: show icons, hide text or wrap */
     .nav-items {
@@ -644,6 +670,13 @@ footer {
     .All-box-1 {
         margin-left: 1rem;
         margin-right: 1rem;
+        width: auto;
+        /* Allow full width minus margins */
+    }
+
+    .all-box {
+        margin-left: 1rem;
+        /* Consistent margin */
     }
 
     .All-box-1 {
