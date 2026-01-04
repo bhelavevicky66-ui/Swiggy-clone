@@ -276,14 +276,6 @@ pre {
     height: 180px;
     width: 240px;
     border-radius: 20px;
-    transition-property: all;
-    transition-duration: 0.10s;
-    transition-timing-function: linear;
-}
-
-.big-img-1:hover {
-    height: 170px;
-    width: 230px;
 }
 
 .container-1 {
