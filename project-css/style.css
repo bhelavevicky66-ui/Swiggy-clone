@@ -187,7 +187,7 @@ sup {
     height: 144px;
     width: 144px;
     object-fit: cover;
-    
+
     box-shadow: none;
 }
 
@@ -312,7 +312,7 @@ p {
 
 .All-box-1 {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     height: auto;
     width: 85%;
@@ -619,6 +619,7 @@ footer {
         gap: 1rem;
     }
 }
+
 @media (max-width: 768px) {
 
     .navbar {
